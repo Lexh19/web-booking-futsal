@@ -1,25 +1,36 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
-</script>
-
 <template>
+<AppHeader/>
 <body>
-  <router-view />
+  <router-view/>
 </body>
+<AppFooter/>
+
 </template>
+
+<script>
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
+
+export default {
+  name:'App',
+  components:{
+    AppHeader,
+    AppFooter
+  }
+};
+</script>
 
 <style scoped>
 *{
   margin: 0;
   padding: 0;
 }
-body{
-  background-color:#000;
+
+@media screen and (max-width: 922px){
+  *, body{
+    width: 100%;
+  }
 }
 </style>
 
-<script>
-
-</script>
 

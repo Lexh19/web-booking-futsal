@@ -1,16 +1,9 @@
 <template>
-
     <div class="login-container">
-
-      <div class="login-pict">
-        <img src="/src/assets/img/login/login.png" alt="">
-      </div>
-
-
       <div class="login-box">
         <form action="">
-          <h2>Account Login</h2>
-          <div  class="input-box">
+          <h2>User Login</h2>
+          <div class="input-box">
             <input type="email" placeholder="Email" required>
           </div>
 
@@ -19,63 +12,64 @@
           </div>
 
           <div class="register-link">
-            <p><input type="checkbox"> Remember me 
-            <a href="#">Forget password?</a></p>
+            <router-link to="home"><p><input type="checkbox"> Remember me 
+            <a href="#">Forget password?</a></p></router-link>
 
             <button type="submit" name="submit">Login</button>
 
-            <p> Don't have an account? <a href="#"> Register</a></p>
-            </div>
+            <router-link to="/registration">
+              <p> Don't have an account? <a href="#"> Register</a></p>
+            </router-link>
+          </div>
           
-            <div class="opsion">
-              <button><img src="/src/assets/img/icon/facebook.png" alt=""></button>
-              <button><img src="/src/assets/img/icon/search.png" alt=""></button>
-              <button><img src="/src/assets/img/icon/apple-logo.png" alt=""></button>
-            </div>
+          <div class="option">
+            <p>Or Log In With: </p>
+            <button><img src="/src/assets/img/icon/facebook.png" alt=""></button>
+            <button><img src="/src/assets/img/icon/search.png" alt=""></button>
+          </div>
           
 
         </form>
       </div>
-
-      
     </div>
 
 </template>
 
+
 <style scoped>
 
 .login-container{
-display: flex;
-align-items: center;
-justify-content: center;
-height: 100vh;
-}
-.login-pict{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-.login-pict img{
-  height: 740px;
-  width: 1000px;
-}
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background: url('/src/assets/img/background/background.png') no-repeat center center fixed;
+  background-size: cover; 
+  font-family: 'Montserrat', sans-serif;
+} 
 
 .login-box{
-  display: flex;
-  padding: 20px;
-  margin-right: -1000px;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  max-width: 90%;
+  padding: 20px 50px;
+  margin-right: -800px;
 }
+
 
 .login-box h2{
   font-size: 30px ;
   text-align: center;
-  color: white;
+  color: black;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .input-box input{
   position: relative;
   width: 100%;
   height: 30px;
-  border: 5px solid #333;
+  border: 3px solid #333;
   margin: 10px 0;
   outline: none;
   border-radius: 5px;
@@ -91,7 +85,7 @@ height: 100vh;
   margin: 25px 0;
 }
 .register-link p{
-  color: white;
+  color:black;
 }
 .register-link p a{
   color: #333;
@@ -113,14 +107,20 @@ height: 100vh;
   margin: 20px 0;
   margin-left: 15px;
   color: white;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-.opsion button{
+.option p{
+  text-align: center;
+}
+.option button{
   height: 30px;
-  width: 30%;
+  width: 25%;
   border-radius: 10px;
-  margin: 10px 2px ;
+  margin: 5px -25px ;
+  margin-left: 50px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 } 
-.opsion img{
+.option img{
 height: 20px;
 position: center;
 }
